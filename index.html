@@ -50,7 +50,7 @@
 
       #name {
         font-size: 1.5rem;
-        margin: 0.3rem 0;
+        margin: 0 0 0.3rem 0;
       }
 
       #name > span:first-child {
@@ -70,11 +70,21 @@
       }
 
       .separator {
-        margin-top: 0px;
+        margin: 0px;
       }
 
       .section-title {
         font-style: italic;
+      }
+
+      .section-item-list li {
+        font-size: 0.8rem;
+        padding: 0 0 0 1.5rem;
+        border: 0px;
+      }
+
+      .section-item > * {
+        margin: 0px;
       }
 
       @media print {
@@ -128,11 +138,21 @@
             <h3 class="section-title">Titulo</h3>
             <hr class="separator">
 
-            <ul>
+            <ul class="list-group list-group-flush">
+
               <!-- Item de Lista -->
-              <li>
-                
+              <li class="section-item list-group-item">
+                <h4>Item list title</h4>
+                <h5>Item list subtitle</h5>
+                <h5>Item list subsubtitle</h5>
+
+                <ol class="section-item-list list-group list-group-flush list-group-numbered">
+                  <li class="list-group-item">First item</li>
+                  <li class="list-group-item">Second item</li>
+                  <li class="list-group-item">Third item</li>
+                </ol>
               </li>
+              
             </ul>
           </div>
         </div>
