@@ -1,176 +1,107 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> CV Template </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  
-    <style>
-      body {
-        font-family: 'Roboto', sans-serif; /* Utiliza la fuente Roboto para el cuerpo del texto */
-        min-height: 100vh;
-      }
+    <link rel="stylesheet" href="style.css">
+</head>
 
-      #cv > div {
-        min-height: 100vh;
-        border: 1px solid black;
-      }
+<body>
 
-      #left-column {
-        background: linear-gradient(to bottom, #646463 80px, #45475b 80px);
-        padding: 20px;
-
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: start;
-      }
-
-      #right-column {
-        background: white;
-        padding: 0px;
-      }
-
-      img {
-        width: 100%;
-        border: 2px solid black;
-      }
-
-      #btn-print {
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-      }
-
-      #intro {
-        background-color: lightgray;
-      }
-
-      #name {
-        font-size: 1.5rem;
-        margin: 0 0 0.3rem 0;
-      }
-
-      #name > span:first-child {
-        font-weight: 600;
-      }
-
-      #title {
-        color: #6c757d;
-        margin: 0.3rem 0;
-      }
-
-      #subtitle span {
-        color: #6c757d;
-        background-color: rgb(234, 255, 138);
-        font-style: italic;
-        padding: 0 0.3rem;
-      }
-
-      .separator {
-        margin: 0px;
-      }
-
-      .section-title {
-        font-style: italic;
-      }
-
-      .section-item-list li {
-        font-size: 0.8rem;
-        padding: 0 0 0 1.5rem;
-        border: 0px;
-      }
-
-      .section-item > * {
-        margin: 0px;
-      }
-
-      @media print {
-        #btn-print {
-          display: none;
-        }
-
-        #cv {
-          width: 90%;
-          margin: auto;
-        }
-      }
-    </style>
-  
-  </head>
-  <body>
-    
-    <div id="cv" class="container">
-      <div class="row">
-        <!-- Left Column -->
-        <div id="left-column" class="col-4 col-md-3">
-          <img src="./img/me.png" alt="cv">
-        </div>
-
-        <!-- Right Column -->
-        <div id="right-column" class="col-8 col-md-9">
-
-          <!-- Introduccion -->
-          <div id="intro" class="container p-4">
-            <div class="row justify-content-around">
-              <div class="col-12 col-md-5">
-                <p id="name">
-                  <span> Eduardo </span> Ignacio <span> Denis </span> 
-                </p>
-                <p id="title">
-                  <span> Ingeniero en Sistemas de Información </span>
-                </p>
-                <p id="subtitle">
-                  <span> Fullstack Dev </span>
-                </p>
-              </div>
-
-              <div class="col-12 col-md-7"> 
-                Apasionado por la tecnología y la resolución de problemas, con enfoque en ingeniería de datos. Siempre listo para nuevos desafíos y oportunidades.  
-              </div>
+    <div id="app">
+        <div class="row">
+            <!-- Left Column -->
+            <div id="left-column" class="col-4 col-md-3">
+                <img src="./img/me.png" alt="cv">
             </div>
-          </div>
 
-          <!-- Nueva Sección -->
-          <div class="container p-4 section">
-            <h3 class="section-title">Titulo</h3>
-            <hr class="separator">
+            <!-- Right Column -->
+            <div id="right-column" class="col-8 col-md-9">
+                <!-- Introduccion -->
+                <div id="intro" class="container p-4">
+                    <div class="row justify-content-around">
+                        <div class="col-12 col-md-5">
+                            <p id="name">
+                                <span>{{ firstName }} </span> {{ lastName }}
+                            </p>
+                            <p id="academy-title">
+                                <span>{{ academyTitle }}</span>
+                            </p>
+                            <p id="job-title">
+                                <span>{{ jobTitle }}</span>
+                            </p>
+                        </div>
+                        <div class="profile col-12 col-md-7">
+                            {{ profile }}
+                        </div>
+                    </div>
+                </div>
 
-            <ul class="list-group list-group-flush">
+                <!-- Secciones dinámicas -->
+                <div v-for="(section, index) in sections" :key="index" class="section container p-4">
+                    <h3 class="section-title mb-1">{{ section.title }}</h3>
+                    <hr class="separator">
+                    <ul class="list-group list-group-flush">
+                        <li v-for="(task, taskIndex) in section.tasks" :key="taskIndex"
+                            class="section-item list-group-item">
+                            <h4 class="section-detail">{{ section.detail }}</h4>
+                            <div class="d-flex justify-content-between">
+                                <span class="section-extra-detail">{{ section.extraDetail }}</span>
+                            </div>
+                            <ul class="section-item-list">
+                                <li v-for="(task, taskIndex) in section.tasks" :key="taskIndex">{{ task }}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-              <!-- Item de Lista -->
-              <li class="section-item list-group-item">
-                <h4>Item list title</h4>
-                <h5>Item list subtitle</h5>
-                <h5>Item list subsubtitle</h5>
-
-                <ol class="section-item-list list-group list-group-flush list-group-numbered">
-                  <li class="list-group-item">First item</li>
-                  <li class="list-group-item">Second item</li>
-                  <li class="list-group-item">Third item</li>
-                </ol>
-              </li>
-              
-            </ul>
-          </div>
+            <button id="btn-print" class="btn btn-primary" @click="printCV">Imprimir</button>
         </div>
-      </div>
     </div>
 
-    <button id="btn-print" class="btn btn-primary" onclick="window.print()">Imprimir</button>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
     <script>
-      window.onbeforeprint = function() {
-        document.getElementById('cv').classList.remove('container');
-      }
-
-      window.onafterprint = function() {
-        document.getElementById('cv').classList.add('container');
-      }
+        new Vue({
+            el: '#app',
+            data: {
+                firstName: '',
+                lastName: '',
+                profile: '',
+                academyTitle: '',
+                jobTitle: '',
+                sections: []
+            },
+            mounted() {
+                // Load JSON data
+                fetch('cv.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.firstName = data.firstName;
+                        this.lastName = data.lastName;
+                        this.profile = data.profile;
+                        this.academyTitle = data.academyTitle;
+                        this.jobTitle = data.jobTitle;
+                        this.sections = data.sections;
+                    })
+                    .catch(error => console.error('Error loading JSON:', error));
+            },
+            methods: {
+                printCV() {
+                    window.print();
+                }
+            }
+        });
     </script>
-  </body>
+</body>
+
 </html>

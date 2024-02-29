@@ -1,0 +1,39 @@
+{
+    "firstName": "Eduardo Ignacio",
+    "lastName": "Denis",
+    "profile": "Apasionado por la tecnología y la resolución de problemas, con enfoque en ingeniería de datos. Siempre listo para nuevos desafíos y oportunidades.",
+    "academyTitle": "Ingeniero en Sistemas de Información",
+    "jobTitle": "Fullstack Developer",
+    "sections": [
+        {
+            "title": "title1",
+            "detail": "detail1",
+            "extraDetail": "extraDetail1",
+            "tasks": [
+                "task1_one",
+                "task1_two",
+                "task1_three"
+            ]
+        },
+        {
+            "title": "title2",
+            "detail": "detail2",
+            "extraDetail": "extraDetail2",
+            "tasks": [
+                "task2_one",
+                "task2_two",
+                "task2_three"
+            ]
+        },
+        {
+            "title": "title3",
+            "detail": "detail3",
+            "extraDetail": "extraDetail3",
+            "tasks": [
+                "task3_one",
+                "task3_two",
+                "task3_three"
+            ]
+        }
+    ]
+}
