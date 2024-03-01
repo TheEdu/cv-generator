@@ -3,7 +3,15 @@
     "lastName": "Denis",
     "profile": "Apasionado por la tecnología y la resolución de problemas, con enfoque en ingeniería de datos. Siempre listo para nuevos desafíos y oportunidades.",
     "academyTitle": "Ingeniero en Sistemas de Información",
-    "jobTitle": "Fullstack Developer",
+    "jobTitle": "Ninjaneer",
+    "contact": {
+        "phone": "+123456789",
+        "email": "john@example.com",
+        "socialMedia": {
+          "github": "https://github.com/johndoe",
+          "linkedin": "https://www.linkedin.com/in/johndoe"
+        }
+    },
     "sections": [
         {
             "title": "title1",
