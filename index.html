@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <script src="https://kit.fontawesome.com/c7384fcffa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,29 +19,66 @@
             <!-- Left Column -->
             <div id="left-column" class="col-4 col-md-3">
                 <img src="./img/me.png" alt="cv">
-                <div class="contact-info">
-                    <h3>Contact</h3>
+
+                <!-- Seccion de Contacto -->
+                <div class="section-info m-2">
+                    <h4 class="fst-italic"> {{ contactSection.title }} </h4>
                     <hr class="separator">
 
                     <div class="container">
-                        <ul>
-                            <li>
-                                <strong>Phone:</strong> 
-                                {{ contact.phone }}
-                            </li>
-                            <li>
-                                <strong>Email:</strong> 
-                                <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
-                            </li>
-                            <li v-if="githubLink">
-                                <a :href="githubLink">GitHub</a>
-                            </li>
-                            <li v-if="linkedinLink">
-                                <a :href="linkedinLink">LinkedIn</a>
+                        <ul class="list-unstyled">
+                            <li v-for="(contactItem, index) in contactSection.list" :key="index">
+                                <strong class="fst-italic">{{ contactItem.title }}</strong>
+                                <div class="d-flex align-items-center ps-1 pb-1">
+                                    <span v-if="contactItem.icon" class="me-1 pe-1">
+                                        <i :class="contactItem.icon"></i>
+                                    </span>
+                                    <span class="fst-italic" v-if="contactItem.link">
+                                        <a :href="contactItem.link" class="text-decoration-none" target="_blank">{{ contactItem.text }}</a>
+                                    </span>
+                                    <span class="fst-italic text-grey" v-else>{{ contactItem.text }}</span>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- Seccion de Habilidades -->
+                <div class="section-info">
+                    <h4 class="fst-italic">{{ skillSection.title }}</h4>
+                    <hr class="separator">
+
+                    <div class="container">
+                        <ul class="list-unstyled">
+                            <li v-for="(skill, index) in skillSection.list" :key="index">
+                                <strong class="fst-italic">{{ skill.title }}</strong>
+                                <div class="d-flex align-items-center pb-2">
+                                    <div class="progress flex-grow-1">
+                                        <div class="progress-bar" role="progressbar" :style="{ width: skill.progress + '%' }" :aria-valuenow="skill.progress" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Seccion de Lenguajes -->
+                <div class="section-info">
+                    <h4 class="fst-italic">{{ languageSection.title }}</h4>
+                    <hr class="separator">
+
+                    <div class="container">
+                        <ul class="list-unstyled">
+                            <li v-for="(language, index) in languageSection.list" :key="index">
+                                <strong class="fst-italic">{{ language.title }}</strong>
+                                <div class="d-flex align-items-center pb-1">
+                                    <span class="fst-italic text-grey">{{ language.text }}</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Right Column -->
@@ -102,7 +140,15 @@
                 profile: '',
                 academyTitle: '',
                 jobTitle: '',
-                contact: {},
+                contactSection: {
+                    list: []
+                },
+                skillSection: {
+                    list: []
+                },
+                languageSection: {
+                    list: []
+                },
                 sections: []
             },
             mounted() {
@@ -115,7 +161,9 @@
                         this.profile = data.profile;
                         this.academyTitle = data.academyTitle;
                         this.jobTitle = data.jobTitle;
-                        this.contact = data.contact;
+                        this.contactSection = data.contactSection;
+                        this.skillSection = data.skillSection;
+                        this.languageSection = data.languageSection;
                         this.sections = data.sections;
                     })
                     .catch(error => console.error('Error loading JSON:', error));
@@ -123,14 +171,6 @@
             methods: {
                 printCV() {
                     window.print();
-                }
-            },
-            computed: {
-                githubLink() {
-                    return this.contact.socialMedia && this.contact.socialMedia.github ? this.contact.socialMedia.github : '';
-                },
-                linkedinLink() {
-                    return this.contact.socialMedia && this.contact.socialMedia.linkedin ? this.contact.socialMedia.linkedin : '';
                 }
             }
         });

@@ -4,13 +4,72 @@
     "profile": "Apasionado por la tecnología y la resolución de problemas, con enfoque en ingeniería de datos. Siempre listo para nuevos desafíos y oportunidades.",
     "academyTitle": "Ingeniero en Sistemas de Información",
     "jobTitle": "Ninjaneer",
-    "contact": {
-        "phone": "+123456789",
-        "email": "john@example.com",
-        "socialMedia": {
-          "github": "https://github.com/johndoe",
-          "linkedin": "https://www.linkedin.com/in/johndoe"
-        }
+    "contactSection": {
+        "title": "Contacto",
+        "list": [
+            {
+                "title": "Telefono",
+                "text": "+123456789",
+                "icon": "",
+                "link": ""
+            },
+            {
+                "title": "Email",
+                "text": "john@example.com",
+                "icon": "",
+                "link": ""
+            },
+            {
+                "title": "Github",
+                "text": "johndoe",
+                "icon": "fa fa-github",
+                "link": "https://github.com/johndoe"
+            }, 
+            {
+                "title": "Linkedin",
+                "text": "johndoe",
+                "icon": "fa fa-linkedin",
+                "link": "https://www.linkedin.com/in/johndoe"
+            }
+        ]
+    },
+    "skillSection": {
+        "title": "Habilidades",
+        "list": [
+            {
+                "title": "Python",
+                "progress": "100"
+            },
+            {
+                "title": "Javascript",
+                "progress": "80"
+            },
+            {
+                "title": "HTML",
+                "progress": "100"
+            },
+            {
+                "title": "C++",
+                "progress": "50"
+            }
+        ]
+    },
+    "languageSection": {
+        "title": "Lenguajes",
+        "list": [
+            {
+                "title": "Español",
+                "text": "Nativo"
+            },
+            {
+                "title": "Ingles",
+                "text": "Avanzado"
+            },
+            {
+                "title": "Portugues",
+                "text": "Principe"
+            }
+        ]
     },
     "sections": [
         {
@@ -31,16 +90,6 @@
                 "task2_one",
                 "task2_two",
                 "task2_three"
-            ]
-        },
-        {
-            "title": "title3",
-            "detail": "detail3",
-            "extraDetail": "extraDetail3",
-            "tasks": [
-                "task3_one",
-                "task3_two",
-                "task3_three"
             ]
         }
     ]

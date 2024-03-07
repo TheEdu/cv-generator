@@ -22,19 +22,34 @@ body {
     align-content: start;
 }
 
-.contact-info {
-    margin-top: 20px;
+a {
+    color: #71acff;
+}
+
+.progress {
+    height: 0.5rem;
+}
+
+.progress-bar {
+    background-color: #71acff;
+}
+
+.text-grey {
+    color: #cacaca;
+}
+
+.section-info {
     padding: 10px;
     width: 100%;
 }
 
-.contact-info ul {
+.section-info ul {
     list-style-type: none;
     padding-left: 0px;
     margin: 10px 0px;
 }
 
-.contact-info h3 {
+.section-info h4 {
     margin-bottom: 0px;
 }
 
@@ -174,6 +189,10 @@ img {
     .profile {
         padding-top: 0px;
         padding-bottom: 0px;
+    }
+
+    .section-info {
+        font-size: 0.8rem;
     }
 
 }
