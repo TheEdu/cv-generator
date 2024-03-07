@@ -17,11 +17,24 @@
     <div id="app">
         <div class="row">
             <!-- Left Column -->
-            <div id="left-column" class="col-4 col-md-3">
+            <div id="left-column" class="col-12 col-sm-4 col-md-3">
                 <img src="./img/me.png" alt="cv">
 
+                <!-- Seccion Info - para pantallas chicas -->
+                <div class="d-sm-none container mt-2">
+                    <p class="name">
+                        <span>{{ firstName }} </span> {{ lastName }}
+                    </p>
+                    <p class="academy-title text-grey">
+                        <span>{{ academyTitle }}</span>
+                    </p>
+                    <p class="job-title">
+                        <span>{{ jobTitle }}</span>
+                    </p>
+                </div>
+
                 <!-- Seccion de Contacto -->
-                <div class="section-info m-2">
+                <div class="section-info mt-3">
                     <h4 class="fst-italic"> {{ contactSection.title }} </h4>
                     <hr class="separator">
 
@@ -82,18 +95,18 @@
             </div>
 
             <!-- Right Column -->
-            <div id="right-column" class="col-8 col-md-9">
+            <div id="right-column" class="col-12 col-sm-8 col-md-9">
                 <!-- Introduccion -->
-                <div id="intro" class="container p-4">
+                <div id="intro" class="d-none d-sm-block container p-4">
                     <div class="row justify-content-around">
                         <div class="col-12 col-md-5">
-                            <p id="name">
+                            <p class="name">
                                 <span>{{ firstName }} </span> {{ lastName }}
                             </p>
-                            <p id="academy-title">
+                            <p class="academy-title">
                                 <span>{{ academyTitle }}</span>
                             </p>
-                            <p id="job-title">
+                            <p class="job-title">
                                 <span>{{ jobTitle }}</span>
                             </p>
                         </div>
@@ -122,7 +135,9 @@
                 </div>
             </div>
 
-            <button id="btn-print" class="btn btn-primary" @click="printCV">Imprimir</button>
+            <button id="btn-print" class="btn btn-primary" @click="printCV">
+                <i class="fas fa-print me-1"></i>
+            </button>
         </div>
     </div>
 
