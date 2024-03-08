@@ -2,200 +2,231 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> CV Template </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <script src="https://kit.fontawesome.com/c7384fcffa.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> CV Template </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <script src="https://kit.fontawesome.com/c7384fcffa.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <div id="app">
-        <div class="row">
-            <!-- Left Column -->
-            <div id="left-column" class="col-12 col-sm-4 col-md-3">
-                <div class="contenedor-imagen">
-                  <img :src="urlImagen" alt="cv">
-                </div>
-
-                <!-- Seccion Info - para pantallas chicas -->
-                <div class="d-sm-none container mt-2">
-                    <p class="name">
-                        <span>{{ firstName }} </span> {{ lastName }}
-                    </p>
-                    <p class="academy-title text-grey">
-                        <span>{{ academyTitle }}</span>
-                    </p>
-                    <p class="job-title">
-                        <span>{{ jobTitle }}</span>
-                    </p>
-                </div>
-
-                <!-- Seccion de Contacto -->
-                <div class="section-info mt-3">
-                    <h4 class="fst-italic"> {{ contactSection.title }} </h4>
-                    <hr class="separator">
-
-                    <div class="container">
-                        <ul class="list-unstyled">
-                            <li v-for="(contactItem, index) in contactSection.list" :key="index">
-                                <strong class="fst-italic">{{ contactItem.title }}</strong>
-                                <div class="d-flex align-items-center ps-1 pb-1">
-                                    <span v-if="contactItem.icon" class="me-1 pe-1">
-                                        <i :class="contactItem.icon"></i>
-                                    </span>
-                                    <span class="fst-italic" v-if="contactItem.link">
-                                        <a :href="contactItem.link" class="text-decoration-none" target="_blank">{{ contactItem.text }}</a>
-                                    </span>
-                                    <span class="fst-italic text-grey" v-else>{{ contactItem.text }}</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Seccion de Habilidades -->
-                <div class="section-info">
-                    <h4 class="fst-italic">{{ skillSection.title }}</h4>
-                    <hr class="separator">
-
-                    <div class="container">
-                        <ul class="list-unstyled">
-                            <li v-for="(skill, index) in skillSection.list" :key="index">
-                                <strong class="fst-italic">{{ skill.title }}</strong>
-                                <div class="d-flex align-items-center pb-2">
-                                    <div class="progress flex-grow-1">
-                                        <div class="progress-bar" role="progressbar" :style="{ width: skill.progress + '%' }" :aria-valuenow="skill.progress" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Seccion de Lenguajes -->
-                <div class="section-info">
-                    <h4 class="fst-italic">{{ languageSection.title }}</h4>
-                    <hr class="separator">
-
-                    <div class="container">
-                        <ul class="list-unstyled">
-                            <li v-for="(language, index) in languageSection.list" :key="index">
-                                <strong class="fst-italic">{{ language.title }}</strong>
-                                <div class="d-flex align-items-center pb-1">
-                                    <span class="fst-italic text-grey">{{ language.text }}</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Right Column -->
-            <div id="right-column" class="col-12 col-sm-8 col-md-9">
-                <!-- Introduccion -->
-                <div id="intro" class="d-none d-sm-block container p-3">
-                    <div class="row justify-content-around">
-                        <div class="col-12 col-md-5">
-                            <p class="name">
-                                <span>{{ firstName }} </span> {{ lastName }}
-                            </p>
-                            <p class="academy-title">
-                                <span>{{ academyTitle }}</span>
-                            </p>
-                            <p class="job-title">
-                                <span>{{ jobTitle }}</span>
-                            </p>
-                        </div>
-                        <div class="profile col-12 col-md-7">
-                            {{ profile }}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Secciones dinámicas -->
-                <div v-for="(section, index) in sections" :key="index" class="section container p-4 pb-1">
-                    <h3 class="section-title mb-1">{{ section.title }}</h3>
-                    <hr class="separator">
-                    <ul class="list-group list-group-flush">
-                        <li v-for="(item, itemIndex) in section.items" :key="itemIndex"
-                            class="section-item list-group-item">
-                            <div class="d-flex flex-wrap justify-content-between">
-                              <h4 class="section-detail">{{ item.detail }}</h4>
-                              <div class="d-flex justify-content-between">
-                                  <span class="section-extra-detail">{{ item.extraDetail }}</span>
-                              </div>
-                            </div>
-                            <ul class="section-item-list">
-                                <li v-for="(task, taskIndex) in item.tasks" :key="taskIndex">{{ task }}</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <button id="btn-print" class="btn btn-primary" @click="printCV">
-                <i class="fas fa-print me-1"></i>
-            </button>
-        </div>
+  <div id="app">
+    <div v-if="networkError">
+      <div class="alert alert-danger" role="alert">
+        Error al cargar el JSON desde {{ urlJson }}. Verifica la URL del archivo JSON y tu conexión a internet.
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <div id="cv" v-if="loadedSuccessfully">
+      <div class="row">
+        <!-- Left Column -->
+        <div id="left-column" class="col-12 col-sm-4 col-md-3">
+          <div class="contenedor-imagen">
+            <img :src="urlImagen" alt="cv">
+          </div>
 
-    <script>
-        new Vue({
-            el: '#app',
-            data: {
-                firstName: '',
-                lastName: '',
-                profile: '',
-                academyTitle: '',
-                jobTitle: '',
-                urlImagen: '',
-                contactSection: {
-                    list: []
-                },
-                skillSection: {
-                    list: []
-                },
-                languageSection: {
-                    list: []
-                },
-                sections: []
-            },
-            mounted() {
-                // Load JSON data
-                fetch('cv.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        this.firstName = data.firstName;
-                        this.lastName = data.lastName;
-                        this.profile = data.profile;
-                        this.academyTitle = data.academyTitle;
-                        this.jobTitle = data.jobTitle;
-                        this.contactSection = data.contactSection;
-                        this.skillSection = data.skillSection;
-                        this.languageSection = data.languageSection;
-                        this.sections = data.sections;
-                        this.urlImagen = data.urlImagen;
-                    })
-                    .catch(error => console.error('Error loading JSON:', error));
-            },
-            methods: {
-                printCV() {
-                    window.print();
-                }
+          <!-- Seccion Info - para pantallas chicas -->
+          <div class="d-sm-none container mt-2">
+            <p class="name">
+              <span>{{ firstName }} </span> {{ lastName }}
+            </p>
+            <p class="academy-title text-grey">
+              <span>{{ academyTitle }}</span>
+            </p>
+            <p class="job-title">
+              <span>{{ jobTitle }}</span>
+            </p>
+          </div>
+
+          <!-- Seccion de Contacto -->
+          <div class="section-info mt-3">
+            <h4 class="fst-italic"> {{ contactSection.title }} </h4>
+            <hr class="separator">
+
+            <div class="container">
+              <ul class="list-unstyled">
+                <li v-for="(contactItem, index) in contactSection.list" :key="index">
+                  <strong class="fst-italic">{{ contactItem.title }}</strong>
+                  <div class="d-flex align-items-center ps-1 pb-1">
+                    <span v-if="contactItem.icon" class="me-1 pe-1">
+                      <i :class="contactItem.icon"></i>
+                    </span>
+                    <span class="fst-italic" v-if="contactItem.link">
+                      <a :href="contactItem.link" class="text-decoration-none" target="_blank">{{ contactItem.text
+                        }}</a>
+                    </span>
+                    <span class="fst-italic text-grey" v-else>{{ contactItem.text }}</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Seccion de Habilidades -->
+          <div class="section-info">
+            <h4 class="fst-italic">{{ skillSection.title }}</h4>
+            <hr class="separator">
+
+            <div class="container">
+              <ul class="list-unstyled">
+                <li v-for="(skill, index) in skillSection.list" :key="index">
+                  <strong class="fst-italic">{{ skill.title }}</strong>
+                  <div class="d-flex align-items-center pb-2">
+                    <div class="progress flex-grow-1">
+                      <div class="progress-bar" role="progressbar" :style="{ width: skill.progress + '%' }"
+                        :aria-valuenow="skill.progress" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Seccion de Lenguajes -->
+          <div class="section-info">
+            <h4 class="fst-italic">{{ languageSection.title }}</h4>
+            <hr class="separator">
+
+            <div class="container">
+              <ul class="list-unstyled">
+                <li v-for="(language, index) in languageSection.list" :key="index">
+                  <strong class="fst-italic">{{ language.title }}</strong>
+                  <div class="d-flex align-items-center pb-1">
+                    <span class="fst-italic text-grey">{{ language.text }}</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column -->
+        <div id="right-column" class="col-12 col-sm-8 col-md-9">
+          <!-- Introduccion -->
+          <div id="intro" class="d-none d-sm-block container p-3">
+            <div class="row justify-content-around">
+              <div class="col-12 col-md-5">
+                <p class="name">
+                  <span>{{ firstName }} </span> {{ lastName }}
+                </p>
+                <p class="academy-title">
+                  <span>{{ academyTitle }}</span>
+                </p>
+                <p class="job-title">
+                  <span>{{ jobTitle }}</span>
+                </p>
+              </div>
+              <div class="profile col-12 col-md-7">
+                {{ profile }}
+              </div>
+            </div>
+          </div>
+
+          <!-- Secciones dinámicas -->
+          <div v-for="(section, index) in sections" :key="index" class="section container p-4 pb-1">
+            <h3 class="section-title mb-1">{{ section.title }}</h3>
+            <hr class="separator">
+            <ul class="list-group list-group-flush">
+              <li v-for="(item, itemIndex) in section.items" :key="itemIndex" class="section-item list-group-item">
+                <div class="d-flex flex-wrap justify-content-between">
+                  <h4 class="section-detail">{{ item.detail }}</h4>
+                  <div class="d-flex justify-content-between">
+                    <span class="section-extra-detail">{{ item.extraDetail }}</span>
+                  </div>
+                </div>
+                <ul class="section-item-list">
+                  <li v-for="(task, taskIndex) in item.tasks" :key="taskIndex">{{ task }}</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="btn-container">
+
+          <a class="btn btn-warning border" :href="urlJson" download="cv.json">
+            <i class="fab fa-js"></i>
+          </a>
+
+          <button class="btn btn-primary border" @click="printCV">
+            <i class="fas fa-print me-1"></i>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        urlJson: './cv.json',
+        firstName: '',
+        lastName: '',
+        profile: '',
+        academyTitle: '',
+        jobTitle: '',
+        urlImagen: '',
+        contactSection: {
+          list: []
+        },
+        skillSection: {
+          list: []
+        },
+        languageSection: {
+          list: []
+        },
+        sections: [],
+        loadedSuccessfully: false,
+        networkError: false
+      },
+      mounted() {
+        // Load JSON data
+        fetch(this.urlJson)
+          .then(response => {
+            if (!response.ok) {
+              this.networkError = true;
+              throw new Error(`Error de red al cargar ${this.urlJson}.`);
             }
-        });
-    </script>
+            return response.json();
+          })
+          .then(data => {
+            this.firstName = data.firstName;
+            this.lastName = data.lastName;
+            this.profile = data.profile;
+            this.academyTitle = data.academyTitle;
+            this.jobTitle = data.jobTitle;
+            this.contactSection = data.contactSection;
+            this.skillSection = data.skillSection;
+            this.languageSection = data.languageSection;
+            this.sections = data.sections;
+            this.urlImagen = data.urlImagen;
+            this.loadedSuccessfully = true;
+          })
+          .catch(error => {
+            console.error('Error loading JSON:', error);
+            this.loadedSuccessfully = false;
+          });
+      },
+      methods: {
+        printCV() {
+          window.print();
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>

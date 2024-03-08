@@ -4,7 +4,7 @@ body {
     min-height: 100vh;
 }
 
-#app>.row {
+#cv > .row {
     min-height: 100vh;
     max-width: 1150px;
     margin: auto;
@@ -65,7 +65,7 @@ img {
     border: 2px solid black;
 }
 
-#btn-print {
+#btn-container {
     width: auto;
     position: fixed;
     bottom: 10px;
@@ -165,11 +165,11 @@ img {
 }
 
 @media print {
-    #btn-print {
+    #btn-container {
         display: none;
     }
 
-    #app>.row {
+    #cv > .row {
         width: 100%;
         margin: auto;
         margin-top: 0px;
