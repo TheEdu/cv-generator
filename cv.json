@@ -211,7 +211,7 @@
                     "tasks": [
                         "MikroTik, Pandora, OpenVPN, Active Directory, Cisco, TP-Link, LDAP",
                         "Linux/Windows Servers, Proxmox, XenServer, Proxy, Oracle VM VirtualBox",
-                        "Grafana", "Zabbix"
+                        "Zabbix, Grafana"
                     ]
                 }
             ]
