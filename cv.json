@@ -3,33 +3,39 @@
     "lastName": "Denis",
     "profile": "Apasionado por la tecnología y la resolución de problemas, con enfoque en ingeniería de datos. Siempre listo para nuevos desafíos y oportunidades.",
     "academyTitle": "Ingeniero en Sistemas de Información",
-    "jobTitle": "Ninjaneer",
+    "jobTitle": "Full-Stack Engineer",
+    "urlImagen": "./img/me.png",
     "contactSection": {
         "title": "Contacto",
         "list": [
             {
-                "title": "Telefono",
-                "text": "+123456789",
+                "title": "Teléfono",
+                "text": "+54 9 3487 517996",
                 "icon": "",
                 "link": ""
             },
             {
                 "title": "Email",
-                "text": "john@example.com",
+                "text": "edigde@gmail.com",
                 "icon": "",
                 "link": ""
             },
             {
+                "title": "Web",
+                "text": "https://edu-apps.com.ar",
+                "link": "https://edu-apps.com.ar/"
+            },
+            {
                 "title": "Github",
-                "text": "johndoe",
-                "icon": "fa fa-github",
-                "link": "https://github.com/johndoe"
-            }, 
+                "text": "https://github.com/TheEdu",
+                "icon": "",
+                "link": "https://github.com/TheEdu/"
+            },
             {
                 "title": "Linkedin",
-                "text": "johndoe",
-                "icon": "fa fa-linkedin",
-                "link": "https://www.linkedin.com/in/johndoe"
+                "text": "https://linkedin.com/in/theedu",
+                "icon": "",
+                "link": "https://linkedin.com/in/theedu/"
             }
         ]
     },
@@ -37,59 +43,177 @@
         "title": "Habilidades",
         "list": [
             {
-                "title": "Python",
-                "progress": "100"
+                "title": "Data Engineering",
+                "progress": "75"
             },
             {
-                "title": "Javascript",
+                "title": "Backend",
+                "progress": "85"
+            },
+            {
+                "title": "Frontend",
+                "progress": "70"
+            },
+            {
+                "title": "Data Bases",
                 "progress": "80"
             },
             {
-                "title": "HTML",
-                "progress": "100"
+                "title": "Networks and Servers",
+                "progress": "80"
             },
             {
-                "title": "C++",
-                "progress": "50"
+                "title": "Business Intelligence",
+                "progress": "60"
             }
         ]
     },
     "languageSection": {
-        "title": "Lenguajes",
+        "title": "Idiomas",
         "list": [
             {
-                "title": "Español",
-                "text": "Nativo"
-            },
-            {
-                "title": "Ingles",
-                "text": "Avanzado"
-            },
-            {
-                "title": "Portugues",
-                "text": "Principe"
+                "title": "Inglés",
+                "text": "Intermedio/Avanzado"
             }
         ]
     },
     "sections": [
         {
-            "title": "title1",
-            "detail": "detail1",
-            "extraDetail": "extraDetail1",
-            "tasks": [
-                "task1_one",
-                "task1_two",
-                "task1_three"
+            "title": "Experiencia Laboral",
+            "items": [
+                {
+                    "detail": "Ingeniero en Sistemas / Socio Fundador",
+                    "extraDetail": "FocusTech SAS [06/2020 - Presente]",
+                    "tasks": [
+                        "Desarrollo de Sistemas Web (Python, Django, JavaScript y MySQL)",
+                        "Ingeniería de Datos (Python, Pandas, Numpy, Superset, etc)",
+                        "Servidores y Redes (Proxmox, MikroTik y Python)"
+                    ]
+                },
+                {
+                    "detail": "Profesor de Programación",
+                    "extraDetail": "UTN FRD - Extensión [06/2022 - Presente]",
+                    "tasks": [
+                        "Desarrollo Web Inicial (HTML, CSS)",
+                        "Desarrollo Web Intermedio (JavaScript, JQuery y Bootstrap)",
+                        "Introducción a Python"
+                    ]
+                },
+                {
+                    "detail": "Ingeniero en Sistemas / Jefe de Articulación Tecnológica",
+                    "extraDetail": "Municipio de Zárate [02/2018 - Presente]",
+                    "tasks": [
+                        "Desarrollo de Sistemas Web (HTML, CSS, Laravel, PHP, Python, JavaScript y MySQL)",
+                        "Análisis de Datos y Business Intelligence (Superset, MySQL, PostgreSQL, Jupyter Notebook, Python, Pandas y Numpy)",
+                        "Servidores y Redes (Proxmox, MikroTik y Python)",
+                        "Seguimiento de Proyectos (Trello y OpenProject)"
+                    ]
+                },
+                {
+                    "detail": "Java y PL/SQL Developer",
+                    "extraDetail": "Toyota Argentina S.A. [03/2017 - 12/2017]",
+                    "tasks": [
+                        "Proyecto en el área de Finanzas (Java y PL/SQL)",
+                        "Soporte del área Comercial"
+                    ]
+                },
+                {
+                    "detail": "Java Developer",
+                    "extraDetail": "UTN FRD, Software Factory [09/2016 - 03/2017]",
+                    "tasks": [
+                        "Desarrollo de Sistema Web para censo de locales comerciales",
+                        "Desarrollo de Sistema Web para gestión de insumos"
+                    ]
+                },
+                {
+                    "detail": "Becario en Informática",
+                    "extraDetail": "UTN FRD, LSI [03/2015 - 09/2016]",
+                    "tasks": [
+                        "Administración de Servidores y Redes (Citrix Xenserver, TP-Link, Active Directory y Bash)",
+                        "Desarrollo de Software (Java y PHP)"
+                    ]
+                }
             ]
         },
         {
-            "title": "title2",
-            "detail": "detail2",
-            "extraDetail": "extraDetail2",
-            "tasks": [
-                "task2_one",
-                "task2_two",
-                "task2_three"
+            "title": "Formación Académica",
+            "items": [
+                {
+                    "detail": "Ingeniería en Sistemas de Información",
+                    "extraDetail": "UTN FRD [03/2011 - 11/2019]",
+                    "tasks": [
+                        "Mejor promedio de Sistemas de la regional Delta",
+                        "Proyecto Final: Device Sense - Plataforma de IIoT"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Formación Extra Académica",
+            "items": [
+                {
+                    "detail": "Desarrollo Web",
+                    "extraDetail": "",
+                    "tasks": [
+                        "Curso de Django - Platzi",
+                        "Curso Básico de Node.js - Platzi",
+                        "Curso de React.js - Platzi",
+                        "jQuery a JavaScript - Platzi",
+                        "Fundamentos de JavaScript - Platzi",
+                        "Java Web: JSP y Servlets - Pluralsight",
+                        "Taller de Java y C - UTN FRD"
+                    ]
+                },
+                {
+                    "detail": "Ingeniería de Datos",
+                    "extraDetail": "",
+                    "tasks": [
+                        "Ingeniería de Datos en Python - Platzi",
+                        "Bases de Datos: Oracle SQL y PL/SQL - Pluralsight"
+                    ]
+                },
+                {
+                    "detail": "Redes y Servidores",
+                    "extraDetail": "",
+                    "tasks": [
+                        "CCNA 1: Introduction to Networking - UTN FRD",
+                        "Curso de Hacking Ético - Platzi"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Tecnologías Utilizadas",
+            "items": [
+                {
+                    "detail": "Desarrollo Web",
+                    "extraDetail": "",
+                    "tasks": [
+                        "Django, Python",
+                        "Laravel, PHP, HTML y CSS",
+                        "JavaScript, Node.js, Express.js",
+                        "Java, JSP y Servlets",
+                        "MySQL, MariaDB, PostgreSQL",
+                        "GIT, GitHub, Bitbucket"
+                    ]
+                },
+                {
+                    "detail": "Ingeniería de Datos",
+                    "extraDetail": "",
+                    "tasks": [
+                        "Python, Pandas, Jupyter Notebooks, Superset",
+                        "Oracle SQL, PostgreSQL, PL/SQL, InfluxDB, MySQL, MariaDB, Cassandra"
+                    ]
+                },
+                {
+                    "detail": "Redes y Servidores",
+                    "extraDetail": "",
+                    "tasks": [
+                        "MikroTik, Pandora, OpenVPN, Active Directory, Cisco, TP-Link, LDAP",
+                        "Linux/Windows Servers, Proxmox, XenServer, Proxy, Oracle VM VirtualBox",
+                        "Grafana", "Zabbix"
+                    ]
+                }
             ]
         }
     ]

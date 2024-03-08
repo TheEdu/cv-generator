@@ -18,7 +18,9 @@
         <div class="row">
             <!-- Left Column -->
             <div id="left-column" class="col-12 col-sm-4 col-md-3">
-                <img src="./img/me.png" alt="cv">
+                <div class="contenedor-imagen">
+                  <img :src="urlImagen" alt="cv">
+                </div>
 
                 <!-- Seccion Info - para pantallas chicas -->
                 <div class="d-sm-none container mt-2">
@@ -97,7 +99,7 @@
             <!-- Right Column -->
             <div id="right-column" class="col-12 col-sm-8 col-md-9">
                 <!-- Introduccion -->
-                <div id="intro" class="d-none d-sm-block container p-4">
+                <div id="intro" class="d-none d-sm-block container p-3">
                     <div class="row justify-content-around">
                         <div class="col-12 col-md-5">
                             <p class="name">
@@ -117,18 +119,20 @@
                 </div>
 
                 <!-- Secciones dinámicas -->
-                <div v-for="(section, index) in sections" :key="index" class="section container p-4">
+                <div v-for="(section, index) in sections" :key="index" class="section container p-4 pb-1">
                     <h3 class="section-title mb-1">{{ section.title }}</h3>
                     <hr class="separator">
                     <ul class="list-group list-group-flush">
-                        <li v-for="(task, taskIndex) in section.tasks" :key="taskIndex"
+                        <li v-for="(item, itemIndex) in section.items" :key="itemIndex"
                             class="section-item list-group-item">
-                            <h4 class="section-detail">{{ section.detail }}</h4>
-                            <div class="d-flex justify-content-between">
-                                <span class="section-extra-detail">{{ section.extraDetail }}</span>
+                            <div class="d-flex flex-wrap justify-content-between">
+                              <h4 class="section-detail">{{ item.detail }}</h4>
+                              <div class="d-flex justify-content-between">
+                                  <span class="section-extra-detail">{{ item.extraDetail }}</span>
+                              </div>
                             </div>
                             <ul class="section-item-list">
-                                <li v-for="(task, taskIndex) in section.tasks" :key="taskIndex">{{ task }}</li>
+                                <li v-for="(task, taskIndex) in item.tasks" :key="taskIndex">{{ task }}</li>
                             </ul>
                         </li>
                     </ul>
@@ -155,6 +159,7 @@
                 profile: '',
                 academyTitle: '',
                 jobTitle: '',
+                urlImagen: '',
                 contactSection: {
                     list: []
                 },
@@ -180,6 +185,7 @@
                         this.skillSection = data.skillSection;
                         this.languageSection = data.languageSection;
                         this.sections = data.sections;
+                        this.urlImagen = data.urlImagen;
                     })
                     .catch(error => console.error('Error loading JSON:', error));
             },
