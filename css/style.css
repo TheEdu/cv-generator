@@ -4,13 +4,22 @@ body {
     min-height: 100vh;
 }
 
+#error {
+    height: 100vh;
+    max-width: 80%;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
 #cv > .row {
     min-height: 100vh;
     max-width: 1150px;
     margin: auto;
     border: 1px solid black;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 #left-column {
