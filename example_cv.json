@@ -1,110 +1,79 @@
 {
-    "firstName": "Eduardo Ignacio",
-    "lastName": "Denis",
-    "profile": "Apasionado por la tecnología y la resolución de problemas, con enfoque en ingeniería de datos. Siempre listo para nuevos desafíos y oportunidades.",
-    "academyTitle": "Ingeniero en Sistemas de Información",
-    "jobTitle": "Full-Stack Engineer",
-    "urlImagen": "./img/me.png",
+    "academyTitle": "Ingeniero en Sistemas de Informaci\u00f3n",
     "contactSection": {
-        "title": "Contacto",
         "list": [
             {
-                "title": "Teléfono",
+                "icon": "",
+                "link": "",
                 "text": "+54 9 3487 517996",
-                "icon": "",
-                "link": ""
+                "title": "Tel\u00e9fono"
             },
             {
-                "title": "Email",
+                "icon": "",
+                "link": "",
                 "text": "edigde@gmail.com",
-                "icon": "",
-                "link": ""
+                "title": "Email"
             },
             {
-                "title": "Web",
+                "link": "https://edu-apps.com.ar/",
                 "text": "https://edu-apps.com.ar",
-                "link": "https://edu-apps.com.ar/"
+                "title": "Web"
             },
             {
-                "title": "Github",
+                "icon": "",
+                "link": "https://github.com/TheEdu/",
                 "text": "https://github.com/TheEdu",
-                "icon": "",
-                "link": "https://github.com/TheEdu/"
+                "title": "Github"
             },
             {
-                "title": "Linkedin",
+                "icon": "",
+                "link": "https://linkedin.com/in/theedu/",
                 "text": "https://linkedin.com/in/theedu",
-                "icon": "",
-                "link": "https://linkedin.com/in/theedu/"
+                "title": "Linkedin"
             }
-        ]
+        ],
+        "title": "Contacto"
     },
-    "skillSection": {
-        "title": "Habilidades",
-        "list": [
-            {
-                "title": "Data Engineering",
-                "progress": "75"
-            },
-            {
-                "title": "Backend",
-                "progress": "85"
-            },
-            {
-                "title": "Frontend",
-                "progress": "70"
-            },
-            {
-                "title": "Data Bases",
-                "progress": "80"
-            },
-            {
-                "title": "Networks and Servers",
-                "progress": "80"
-            },
-            {
-                "title": "Business Intelligence",
-                "progress": "60"
-            }
-        ]
-    },
+    "firstName": "Eduardo Ignacio",
+    "jobTitle": "Full-Stack Engineer",
     "languageSection": {
-        "title": "Idiomas",
         "list": [
             {
-                "title": "Inglés",
-                "text": "Intermedio/Avanzado"
+                "text": "Intermedio/Avanzado",
+                "title": "Ingl\u00e9s"
             }
-        ]
+        ],
+        "title": "Idiomas"
     },
+    "lastName": "Denis",
+    "profile": "Apasionado por la tecnolog\u00eda y la resoluci\u00f3n de problemas, con enfoque en ingenier\u00eda de datos. Siempre listo para nuevos desaf\u00edos y oportunidades.",
     "sections": [
         {
-            "title": "Experiencia Laboral",
             "items": [
                 {
                     "detail": "Ingeniero en Sistemas / Socio Fundador",
                     "extraDetail": "FocusTech SAS [06/2020 - Presente]",
                     "tasks": [
                         "Desarrollo de Sistemas Web (Python, Django, JavaScript y MySQL)",
-                        "Ingeniería de Datos (Python, Pandas, Numpy, Superset, etc)",
+                        "Ingenier\u00eda de Datos (Python, Pandas, Numpy, Superset, etc)",
                         "Servidores y Redes (Proxmox, MikroTik y Python)"
                     ]
                 },
                 {
-                    "detail": "Profesor de Programación",
-                    "extraDetail": "UTN FRD - Extensión [06/2022 - Presente]",
+                    "detail": "Profesor de Programaci\u00f3n",
+                    "extraDetail": "UTN FRD - Extensi\u00f3n [06/2022 - Presente]",
                     "tasks": [
                         "Desarrollo Web Inicial (HTML, CSS)",
                         "Desarrollo Web Intermedio (JavaScript, JQuery y Bootstrap)",
-                        "Introducción a Python"
+                        "Introducci\u00f3n a Python"
                     ]
                 },
                 {
-                    "detail": "Ingeniero en Sistemas / Jefe de Articulación Tecnológica",
-                    "extraDetail": "Municipio de Zárate [02/2018 - Presente]",
+                    "detail": "Ingeniero en Sistemas / Jefe de Articulaci\u00f3n Tecnol\u00f3gica",
+                    "extraDetail": "Municipio de Z\u00e1rate [02/2018 - Presente]",
                     "tasks": [
                         "Desarrollo de Sistemas Web (HTML, CSS, Laravel, PHP, Python, JavaScript y MySQL)",
-                        "Análisis de Datos y Business Intelligence (Superset, MySQL, PostgreSQL, Jupyter Notebook, Python, Pandas y Numpy)",
+                        "An\u00e1lisis de Datos y Business Intelligence (Superset, MySQL, PostgreSQL, Jupyter Notebook, Python, Pandas y Numpy)",
                         "Servidores y Redes (Proxmox, MikroTik y Python)",
                         "Seguimiento de Proyectos (Trello y OpenProject)"
                     ]
@@ -113,8 +82,8 @@
                     "detail": "Java y PL/SQL Developer",
                     "extraDetail": "Toyota Argentina S.A. [03/2017 - 12/2017]",
                     "tasks": [
-                        "Proyecto en el área de Finanzas (Java y PL/SQL)",
-                        "Soporte del área Comercial"
+                        "Proyecto en el \u00e1rea de Finanzas (Java y PL/SQL)",
+                        "Soporte del \u00e1rea Comercial"
                     ]
                 },
                 {
@@ -122,41 +91,41 @@
                     "extraDetail": "UTN FRD, Software Factory [09/2016 - 03/2017]",
                     "tasks": [
                         "Desarrollo de Sistema Web para censo de locales comerciales",
-                        "Desarrollo de Sistema Web para gestión de insumos"
+                        "Desarrollo de Sistema Web para gesti\u00f3n de insumos"
                     ]
                 },
                 {
-                    "detail": "Becario en Informática",
+                    "detail": "Becario en Inform\u00e1tica",
                     "extraDetail": "UTN FRD, LSI [03/2015 - 09/2016]",
                     "tasks": [
-                        "Administración de Servidores y Redes (Citrix Xenserver, TP-Link, Active Directory y Bash)",
+                        "Administraci\u00f3n de Servidores y Redes (Citrix Xenserver, TP-Link, Active Directory y Bash)",
                         "Desarrollo de Software (Java y PHP)"
                     ]
                 }
-            ]
+            ],
+            "title": "Experiencia Laboral"
         },
         {
-            "title": "Formación Académica",
             "items": [
                 {
-                    "detail": "Ingeniería en Sistemas de Información",
+                    "detail": "Ingenier\u00eda en Sistemas de Informaci\u00f3n",
                     "extraDetail": "UTN FRD [03/2011 - 11/2019]",
                     "tasks": [
                         "Mejor promedio de Sistemas de la regional Delta",
                         "Proyecto Final: Device Sense - Plataforma de IIoT"
                     ]
                 }
-            ]
+            ],
+            "title": "Formaci\u00f3n Acad\u00e9mica"
         },
         {
-            "title": "Formación Extra Académica",
             "items": [
                 {
                     "detail": "Desarrollo Web",
                     "extraDetail": "",
                     "tasks": [
                         "Curso de Django - Platzi",
-                        "Curso Básico de Node.js - Platzi",
+                        "Curso B\u00e1sico de Node.js - Platzi",
                         "Curso de React.js - Platzi",
                         "jQuery a JavaScript - Platzi",
                         "Fundamentos de JavaScript - Platzi",
@@ -165,10 +134,10 @@
                     ]
                 },
                 {
-                    "detail": "Ingeniería de Datos",
+                    "detail": "Ingenier\u00eda de Datos",
                     "extraDetail": "",
                     "tasks": [
-                        "Ingeniería de Datos en Python - Platzi",
+                        "Ingenier\u00eda de Datos en Python - Platzi",
                         "Bases de Datos: Oracle SQL y PL/SQL - Pluralsight"
                     ]
                 },
@@ -177,13 +146,13 @@
                     "extraDetail": "",
                     "tasks": [
                         "CCNA 1: Introduction to Networking - UTN FRD",
-                        "Curso de Hacking Ético - Platzi"
+                        "Curso de Hacking \u00c9tico - Platzi"
                     ]
                 }
-            ]
+            ],
+            "title": "Formaci\u00f3n Extra Acad\u00e9mica"
         },
         {
-            "title": "Tecnologías Utilizadas",
             "items": [
                 {
                     "detail": "Desarrollo Web",
@@ -198,7 +167,7 @@
                     ]
                 },
                 {
-                    "detail": "Ingeniería de Datos",
+                    "detail": "Ingenier\u00eda de Datos",
                     "extraDetail": "",
                     "tasks": [
                         "Python, Pandas, Jupyter Notebooks, Superset",
@@ -214,7 +183,39 @@
                         "Zabbix, Grafana"
                     ]
                 }
-            ]
+            ],
+            "title": "Tecnolog\u00edas Utilizadas"
         }
-    ]
+    ],
+    "skillSection": {
+        "list": [
+            {
+                "progress": "75",
+                "title": "Data Engineering"
+            },
+            {
+                "progress": "85",
+                "title": "Backend"
+            },
+            {
+                "progress": "70",
+                "title": "Frontend"
+            },
+            {
+                "progress": "80",
+                "title": "Data Bases"
+            },
+            {
+                "progress": "80",
+                "title": "Networks and Servers"
+            },
+            {
+                "progress": "60",
+                "title": "Business Intelligence"
+            }
+        ],
+        "title": "Habilidades"
+    },
+    "urlImagen": "https://media.licdn.com/dms/image/C4D03AQGWGhpmhXdw8A/profile-displayphoto-shrink_800_800/0/1517072495923?e=1717027200&v=beta&t=Vzos9pKXbyT_2-51eRj64cYuN57neStx-Ed_diMb3NY",
+    "urlImagen_old": "https://cdn.edu-apps.com.ar/curriculum/edu/img/me.png"
 }

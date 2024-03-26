@@ -173,7 +173,7 @@
     new Vue({
       el: '#app',
       data: {
-        urlJson: './cv.json',
+        urlJson: 'https://portal.edu-apps.com.ar/api/jsondata/CV37229772130324/',
         firstName: '',
         lastName: '',
         profile: '',
@@ -203,7 +203,8 @@
             }
             return response.json();
           })
-          .then(data => {
+          .then(json => {
+            data = json.json_data
             this.firstName = data.firstName;
             this.lastName = data.lastName;
             this.profile = data.profile;
