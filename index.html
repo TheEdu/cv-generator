@@ -88,12 +88,12 @@
 
           <!-- Seccion de Lenguajes -->
           <div class="section-info">
-            <h4 class="fst-italic">{{ languageSection.title }}</h4>
+            <h4 class="fst-italic">{{ otherSection.title }}</h4>
             <hr class="separator">
 
             <div class="container">
               <ul class="list-unstyled">
-                <li v-for="(language, index) in languageSection.list" :key="index">
+                <li v-for="(language, index) in otherSection.list" :key="index">
                   <strong class="fst-italic">{{ language.title }}</strong>
                   <div class="d-flex align-items-center pb-1">
                     <span class="fst-italic text-grey">{{ language.text }}</span>
@@ -186,7 +186,7 @@
         skillSection: {
           list: []
         },
-        languageSection: {
+        otherSection: {
           list: []
         },
         sections: [],
@@ -212,7 +212,7 @@
             this.jobTitle = data.jobTitle;
             this.contactSection = data.contactSection;
             this.skillSection = data.skillSection;
-            this.languageSection = data.languageSection;
+            this.otherSection = data.otherSection;
             this.sections = data.sections;
             this.urlImagen = data.urlImagen;
             this.loadedSuccessfully = true;
