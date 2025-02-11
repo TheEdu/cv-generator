@@ -223,7 +223,11 @@
                         if (!response.ok) {
                             throw new Error(`Fallo al cargar ${this.url}.`);
                         }
-                        return response.json();
+                        return response.text();
+                    })
+                    .then(text => {
+                        console.log("Texto recibido:", text); // 👀 Ver en consola
+                        return JSON.parse(text); // Convertir manualmente a JSON
                     })
                     .then(json => {
                         data = json.json_data
