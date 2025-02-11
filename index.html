@@ -230,7 +230,7 @@
                         return JSON.parse(text); // Convertir manualmente a JSON
                     })
                     .then(json => {
-                        data = json.json_data
+                        data = json
                         this.firstName = data.firstName;
                         this.lastName = data.lastName;
                         this.profile = data.profile;
