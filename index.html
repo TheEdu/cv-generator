@@ -207,16 +207,15 @@
             mounted() {
 
                 const urlParams = new URLSearchParams(window.location.search);
-                this.url_id = urlParams.get('id');
+                this.json_name = urlParams.get('json_name');
 
-                if (!this.url_id) {
+                if (!this.json_name) {
                     this.error = true;
-                    this.errorMsg = 'No se proporcionó un ID de CV en el query string.';
+                    this.errorMsg = 'No se proporcionó un json_name de CV en el query string.';
                     return;
                 }
 
-                this.url = `https://portal.edu-apps.com.ar/api/jsondata/${this.url_id}/?format=json`;
-
+                this.url = `https://portal.edu-apps.com.ar/media/uploads/edu-personal/curriculum-vitae/cv/json/${this.json_name}.json`;
 
                 // Load JSON data
                 fetch(this.url)
