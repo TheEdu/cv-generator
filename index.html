@@ -207,7 +207,7 @@
             mounted() {
 
                 const urlParams = new URLSearchParams(window.location.search);
-                this.json_name = urlParams.get('id');
+                this.id = urlParams.get('id');
 
                 if (!this.id) {
                     this.error = true;
